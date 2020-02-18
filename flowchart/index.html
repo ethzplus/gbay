@@ -1,0 +1,156 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/flowchart.js"></script>
+    
+
+</head>
+
+<body>
+    <section id="chart">
+       <!--  <div class="box selectable" id="div1" style="top:200px;left:200px;">
+            <div class="header">Bottomline</div>
+            <div class="states">
+                <div class="state">
+                    <span class="state_name">state bla</span>
+                    <span class="state_value">35</span>
+                </div>
+                <div class="state">
+                    <span class="state_name">state bla</span>
+                    <span class="state_value">35</span>
+                </div>
+                <div class="state">
+                    <span class="state_name">state bla</span>
+                    <span class="state_value">35</span>
+                </div>
+                <div class="state">
+                    <span class="state_name">state bla</span>
+                    <span class="state_value">35</span>
+                </div>
+            </div>
+            <div class="footer">300000 &#xb1; 1000</div>
+        </div>
+
+
+        <div class="box selectable" id="div2" style="top:300px;left:500px;">Box 2</div>
+        <div class="box selectable" id="div3" style="top:500px;left:400px;">Box 3</div>
+
+ -->
+
+    <div id="msgDialog">
+        <div id="dialogContent"></div>
+        <p class="sub">- Click here to close - </p>
+    </div>
+
+    </section>
+    <section id="editor">
+
+        <!-- <p>Modify network</p> -->
+        
+       
+        <section id="editor_header">
+            <label>Network name: 
+                <input type="text" id="net_name" value="BN-net-sample">
+            </label>
+            <input type="button" id="load_net_btn" value="Load network">
+            <input type="button" id="save_net_btn" value="Save network">
+        </section>
+
+
+        <section id="node_info">
+            <h3>Node info</h3>
+
+            <label>Name:
+                <input type="text" id="node_name">
+            </label>
+
+            <label>Title:
+                <input type="text" id="node_title">
+            </label>
+
+
+            <select id="node_kind">
+                <option value="NATURE">Nature</option>
+                <option value="DECISION">Decision</option>
+                <option value="UTILITY">Utility</option>
+                <option value="CONSTANT">Constant</option>
+            </select>
+
+            <select id="node_discrete">
+                <option value="Discrete">Discrete</option>
+                <option value="Continuous">Continuous</option>
+            </select>
+
+            <!-- <div id="node_probs"></div> -->
+
+            <input type="button" id="probs_node_btn" class="node_btn" value="Display probability table">
+            <input type="button" id="delete_node_btn" class="node_btn" value="Delete node">
+            <input type="button" id="connect_node_btn" class="node_btn" value="Connect node">
+
+            <p id="message"></p>
+            
+        </section>
+
+        <section id="node_new">
+            <h3>Create new node</h3>
+            <label>Name:
+                <input type="text" id="new_node_name">
+            </label>
+            <label>Title:
+                <input type="text" id="new_node_title">
+            </label>
+
+            <label>States:
+                <textarea name="new_node_states"></textarea>
+
+                <!-- <input type="text" name="new_node_state">
+                <input type="text" name="new_node_state">
+                <input type="text" name="new_node_state">
+                <input type="text" name="new_node_state">
+                <input type="text" name="new_node_state">
+                <input type="text" name="new_node_state"> -->
+            </label>
+
+            <select id="new_node_kind">
+                <option value="Nature">Nature</option>
+                <option value="Decision">Decision</option>
+                <option value="Utility">Utility</option>
+                <option value="Constant">Constant</option>
+            </select>
+
+            <select id="new_node_discrete">
+                <option value="Discrete">Discrete</option>
+                <option value="Continuous">Continuous</option>
+            </select>
+
+            <input type="button" id="new_node_btn" value="Create">
+
+        </section>
+
+    </section>
+
+    <div id="templates">
+        <div class="box selectable">
+            <div class="header"></div>
+            <div class="states"></div>
+            <div class="footer"></div>
+            <!-- <div class="grabber"></div> -->
+        </div>
+
+        <div class="state">
+            <span class="state_name"></span>
+            <span class="state_value"></span>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

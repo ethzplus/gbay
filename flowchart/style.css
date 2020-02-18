@@ -1,0 +1,140 @@
+#chart {
+    position: relative;
+    display: inline-block;
+    border: solid 1px;
+    height: 800px;
+
+    width: 75%;
+}
+
+#msgDialog{
+    position: relative;
+    top: 10%;
+    max-height: 80%;
+    margin: 0 auto;
+    background-color: lightyellow;
+    width: 30%;
+    border: 1px solid orange;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1000;
+    display: none;
+    cursor: pointer;
+    overflow: auto;
+    min-width: 400px;
+}
+#msgDialog .sub{
+    font-size: 10px;
+}
+
+.box {
+    position: absolute;
+    border: solid 1px;
+    background-color: #fff;
+    z-index: 999;
+    /*padding: 2px;*/
+}
+.connectingLine {
+    padding: 0px;
+    margin: 0px;
+    height: 1px;
+    background-color: #000;
+    line-height: 1px;
+    position: absolute;
+    z-index: 1;
+}
+.arrowhead {
+    margin-top: -6px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 16px 6px 0;
+    border-color: transparent #000 transparent transparent;
+}
+.box .header{
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+.box .footer{
+    border-top: 1px solid;
+    text-align: center;
+}
+
+.state .state_value{
+    float: right;
+}
+
+.selectable{
+    cursor: pointer;
+}
+.selected{
+    background-color: lightblue;
+}
+
+#editor{
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    height: 800px;
+    background-color: grey;
+    vertical-align: top;
+    border: solid 1px;
+}
+#editor_header{
+    background-color: #d8d8d8;
+}
+
+#templates{
+    display: none
+}
+
+#node_info{
+    background-color: lightgreen;
+}
+
+#node_info input[type="text"]{
+    display: block;
+}
+
+#node_probs table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+#node_probs table, th, td{
+    border: 1px solid black;
+}
+
+.cell_editable{
+    background-color: white;
+}
+
+#node_new{
+    position: absolute;
+    bottom: 0px;
+    width:100%;
+    background-color: lightblue;
+}
+
+#node_new input[type="text"]{
+    display: block;
+}
+
+textarea[name="new_node_states"]{
+    height: 200px;
+}
+
+
+#message{
+    font-size: 10px;
+}
+
+
+#node_info input.node_btn{
+    display: none 
+}
+

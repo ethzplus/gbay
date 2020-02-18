@@ -1,0 +1,577 @@
+body, html{
+    padding-bottom: 100px;
+}
+body {
+    background: #414141;
+    font-family: sans-serif;
+}
+
+.body_centered {
+    width: 50%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    z-index: 100;
+}
+#header_index{
+    width: 100%;
+}
+#header_index .row:first-of-type{
+    border-bottom: solid 1px #575656;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+        
+}
+#header_index .row:first-of-type p{
+    font-size: 14px;
+}
+#header_index .row{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items:flex-end;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#header_index .logo {
+    width: 350px;
+    text-align: center;
+}
+
+#header_index .logo.last{
+    width: 550px;
+}
+#header_index p {
+    font-size: 12px;
+    color: #999;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#header_index #logo_gbay {
+    width: 250px;
+    margin-top: 50px;
+}
+
+#header_index #logo_eth {
+    width: 150px;
+}
+
+#header_index #logo_plus {
+        width: 90px;
+    margin-bottom: -6px;
+}
+
+#header_index #logo_ecopotential {
+    width: 65px;
+}
+#header_index #logo_r4d {
+    width: 50px;
+}
+#header_index #logo_lpplus {
+    width: 60px;
+    opacity: 0.6;
+}
+
+#header_index #logo_eu {
+    width: 50px;
+    margin-top: 2px;
+}
+
+#header_content {
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#header_content #logo_gbay {
+    width: 135px;
+    padding-right: 12px;
+    border-right: solid 1px #666;
+    margin-right: 12px;
+}
+
+#logo_eth,
+#logo_plus, #logo_ecopotential, #logo_r4d, #logo_lpplus, #logo_eu {
+    opacity: 0.75;
+}
+#header_content #logo_eth,
+#header_content #logo_plus {
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+#header_content #logo_eth {
+    width: 110px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+#header_content #logo_plus {
+    width: 60px;
+}
+
+#getDescription {
+    text-decoration: none;
+}
+
+.info-sign {
+    background: #a5a6a7;
+    color: #414141;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 100%;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 26px;
+}
+
+a.info-sign {
+    text-decoration: none;
+}
+
+form {
+    background-color: #2f2f2ff5;
+     z-index: 100;
+    padding: 1px;
+    color: #999;
+    font-size: 15px;
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#uploadForm{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#blumap_form {
+    position: fixed;
+    top: 140px;
+    left: 0px;
+    /*width: 240px;*/
+    width: 268px;
+}
+
+.panel {
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    margin: 3px;
+    border-top: solid 1px #404040;
+    border-left: solid 1px #3c3c3c;
+}
+
+#blumap_form button, .proceedBtn,
+#blumap_form input[type=button],
+.inputfile + label {
+    background: #202020;
+    color: #999;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 15px;
+    border: solid 1px #434343;
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#blumap_form button:hover,
+#blumap_form input[type=button]:hover,
+.inputfile + label:hover {
+    background-color: #333;
+}
+
+#blumap_form input[type="number"],
+#blumap_form input[type="email"] {
+    background: #9d9d9d;
+    border: none;
+    color: #303030;
+    padding: 5px;
+    -webkit-box-shadow: inset 1px 1px 1px #000;
+    box-shadow: inset 1px 1px 1px #000;
+}
+
+#email {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#blumap_form input[type="email"] {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 8px;
+    margin-top:8px;
+}
+
+#blumap_form input[type="email"]::-webkit-input-placeholder {
+    color: #303030;
+}
+
+#blumap_form input[type="email"]:-ms-input-placeholder {
+    color: #303030;
+}
+
+#blumap_form input[type="email"]::placeholder {
+    color: #303030;
+}
+
+
+#blumap_form input[type="number"] {
+    width: 55px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#blumap_form button#submitForm, .proceedBtn {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4e4e4e;
+    background: linear-gradient(135deg, #aaccae 0%, #4f9493 100%);
+    opacity: 0.8;
+}
+
+#blumap_form button#submitForm:hover, .proceedBtn:hover {
+    opacity: 1;
+}
+
+#blumap_form h4 {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #8a8888;
+    text-indent: 3px;
+}
+
+#panel_configuration div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+#saveConfig,
+#panel_configuration label {
+    width: 43%;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#notifEmail {
+    margin-left: 0px;
+}
+
+.centered {
+    text-align: center;
+    font-weight: bold;
+}
+
+.help_btn {
+    float: right;
+}
+
+.inputs {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    width: 40%;
+}
+
+.inputs > div {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.evidences {
+    margin-top: 100px;
+    font-size: 12px
+}
+
+.evidences label {
+    width: 100%;
+}
+
+.evidences .evidence_value {
+    width: 150px;
+}
+
+.inputs > div.multiple_networks {
+    display: none;
+}
+
+
+button#addBN {
+    float: right;
+}
+
+.outputs {
+    display: inline-block;
+    width: 50%;
+}
+
+#consoleOutput{
+    display: none;
+    position: fixed;
+    top: 140px;
+    left: 300px;
+    z-index: 200;
+    
+}
+
+
+#outputDiv{
+    position: absolute;
+    top: 1600px;
+    left: 300px;
+}
+
+.output {
+    /*display: none;*/
+    width: 1024px;
+    height: 400px;
+    vertical-align: top;
+    background-color: black;
+    color: white;
+    margin: 0px;
+    /*margin: 10px;
+    padding: 2px;*/
+    white-space: pre-wrap;
+
+   /* position: absolute;
+    top: 1600px;
+    left: 300px;
+    z-index: 100;*/
+    overflow: scroll;
+    position: relative;
+
+    border: 10px solid black
+
+}
+
+.btn-control {
+    margin: 10px;
+    width: 100%;
+}
+
+.stderr {
+    color: red;
+}
+
+.cmd_warning {
+    color: yellow;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+
+.networks {
+    width: 100%;
+}
+
+label.net_period {
+    margin-left: 20px;
+}
+
+.intermidiate {
+    float: right;
+}
+
+.intermidiate img {
+    min-height: 150px;
+
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    /*border: 1px solid black;*/
+    margin: 1px;
+
+    display: block;
+}
+
+/*.inter_processing label{
+	display: block;
+}*/
+
+#showInterInfoBtn,
+#clearPyModuleBtn {
+    margin-left: 3px;
+}
+
+tr td {
+    padding-right: 10px;
+}
+
+
+label.specialBtn {
+    cursor: pointer;
+    color: white;
+    background-color: #747474;
+    display: inline-block;
+    text-align: center;
+    margin-left: 2px;
+    margin-right: 2px;
+
+}
+
+.specialBtn input {
+    /* To get rid of the anoying Choose file form input[type="file"]*/
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+}
+
+.vectors .info {
+    font-size: 0.8em;
+    margin: 0px;
+}
+
+#getDescription {
+    position: relative;
+    float: right;
+    font-size: 1.5em;
+    z-index: 100;
+}
+
+.inputs > div.target_nodes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.target_nodes .selectable {
+    padding: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 1px;
+    width: 32%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.target_nodes .selected {
+    background-color: lightblue;
+}
+
+.popup-close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    background-size: 100%;
+    z-index: 500;
+}
+
+
+#popup-container {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    background: #2d2d2db0;
+}
+
+.center-popup {
+    position: relative;
+    max-width: 50%;
+    max-height: 50%;
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 70px;
+    z-index: 1000;
+    background-color: #cecece;
+    border: solid 1px #ededed;
+    -webkit-box-shadow: 0px 0px 5px #00000073;
+    box-shadow: 0px 0px 5px #00000073;
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+#consolePopup {
+    display: none;
+}
+
+#showDetails {
+    margin: 0px 3px 0px 0px;
+    vertical-align: bottom;
+}
+
+#pyModuleInfoDiv{
+    display: none;
+}
+#PyModuleName{
+    font-size: 10px;
+    overflow: hidden;
+}
+
+
+.valueSetter, .likelihoodSetter, .resetValueButton, .resetLikelihoodButton {
+    display:none;
+}
+.contValueAccept, .contValueCancel, .likelihoodAccept, .likelihoodCancel{
+    cursor: pointer;
+}
+
+.stateValue{
+    float: right;
+    font-weight: bold;
+}

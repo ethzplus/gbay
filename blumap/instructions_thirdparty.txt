@@ -1,0 +1,93 @@
+
+A third party user can provide a funtion to modify node likelihoods at the end of every iteration:
+
+The user must define a python function 'process' with the protoype:
+
+	def process( GDALDatasetH dataset, list nodes_data, int iteration)
+
+
+Arguments:
+
+	dataset 	Reference Dataset. It contains geographical data of the output file. 
+
+			For raster files, dataset is the result of calling: gdal.Open( raster_filename, GA_ReadOnly ).
+
+			Additional info: http://gdal.org/python/osgeo.gdal.Dataset-class.html
+
+			For vector files, dataset is the result of using ESRI Shapefile ogr driver:
+
+			driver = ogr.GetDriverByName('ESRI Shapefile')
+			dataset = driver.Open(vector_filename, 0) 
+
+			Additional info: http://gdal.org/python/osgeo.ogr.DataSource-class.html
+
+
+
+	nodes_data  	List of python dictionaries in the form:
+		{
+			<string> name, 			Node name
+			<list><bytearray>data		Node beliefs ordered by raster cell / vector feature.I.e. To get cell CELL belief of state STATE: value = node.data[CELL][STATE]. Value should be in the range [0.100]
+		}
+			This nodes should be selected in the web page by clicking the node checkbox in the section: Network nodes -> Node input for inter-processing with the protoype 
+
+	iteration	Current network iteration over the raster.  
+
+
+
+This function modifies network node likelihoods by returning a list of dictionaries in the same form as nodes_data. 
+
+The user should provide valid return values. It is possible to validate the structure of the return value by calling 'validResultData(result_node_list)'. It depends on the user to provide valid network names and data.
+
+
+Example: print raster information, ignore the input nodes and set a node 'water' with two possible states to likelihood [0.3, 0.7] for all raster cells
+
+
+def process(dataset, nodes_data, iteration):
+
+	# print reference dataset information
+
+	print 'Driver: ', dataset.GetDriver().ShortName,'/', \
+	       dataset.GetDriver().LongName
+	print 'Size is ',dataset.RasterXSize,'x',dataset.RasterYSize, \
+	       'x',dataset.RasterCount
+	print 'Projection is ',dataset.GetProjection()
+	geotransform = dataset.GetGeoTransform()
+	if not geotransform is None:
+	    print 'Origin = (',geotransform[0], ',',geotransform[3],')'
+	    print 'Pixel Size = (',geotransform[1], ',',geotransform[5],')'
+
+
+	print "process: dataset: ",dataset
+	print "process: nodes_data: ",nodes_data
+
+
+	# print input nodes
+
+	for i, node in enumerate(nodes_data):
+		print i, node['name'], node['states'], node['data']
+
+
+	# create result node list
+
+	new_nodes_data = [{'name' : 'water', 'data': []}]
+
+	for cell in range(dataset.RasterXSize * dataset.RasterYSize ):
+		
+		# new_nodes_data[cell]['data'].append(bytearray([30,70]))
+		new_nodes_data[0]['data'].append(bytearray([30,70]))
+				
+
+	# validate result
+	
+	if (validResultData(res_nodes, True)):
+   		return new_nodes_data
+
+   	else
+		print 
+		print "Some error here: ", new_nodes_data
+
+
+	# print new_nodes_data
+
+	return new_nodes_data
+

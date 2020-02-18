@@ -1,0 +1,120 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+
+        title gBAY
+        link(rel='stylesheet', href='css/styles.css')
+        link(rel='stylesheet', href='css/base.css')
+        link(rel='stylesheet', href='css/network.css')
+        link(rel='stylesheet', href='css/new.css')
+
+        script(src='/socket.io/socket.io.js')
+        script(src='js/jquery-3.1.1.min.js')
+        script(src='js/jquery-ui-1.12.1/jquery-ui.min.js')
+        script(src='js/network.js')
+        script(src='js/blumap.js')
+        script(src='js/jszip.min.js')
+        script(src='js/FileSaver.min.js')
+        
+    body
+        header
+            #header_content
+                img#logo_gbay(src='pics/logo_gbay_neg_small.png')
+                img#logo_eth(src='pics/logo_eth.png')
+                img#logo_plus(src='pics/logo_plus.png')
+                a#getDescription(href='//wiki.gbay.ethz.ch', target='_blank')
+                    .info-sign(title='BLUMAP description') i
+
+        #network(data-by_network=network.net_filename)= network.net_name
+
+            .node.vectornode(id='vectordrop' style='left: 100px;top:100px' data-parents='[]')
+                h3 Vector file
+                h4.node_filename_div
+                    span.node_filename
+                    span.glyphicon.glyphicon-remove.clearInputFileBtn(title="Remove vector from input")
+                ul.nodeMenu
+                    li.uploadGISfile
+                        label(class="custom-file-upload") Upload file
+                            input.file-upload(type='file')
+
+            each node in network.nodes
+                .node(id=node.name style='left:' + node.visual.x + 'px;top:'+node.visual.y+'px' data-parents=node.parents data-nodetype=node.type)
+                    h3= node.name
+                        img(src='pics/target.png')
+                        img(src='pics/script.png')
+
+                    h4.node_filename_div
+                        span.node_filename
+                        span.clearInputFileBtn(title='Remove raster from input') ×
+        
+                    ul.nodeStates
+                        each state in node.states
+                            li= state
+                    ul.nodeMenu
+                        li.uploadGISfile
+                            label(class="custom-file-upload") Upload file
+                                input.file-upload(type='file')
+                        li.targetNodeButton Target
+                        li.pythonNodeButton Python
+                        li.linkNodeButton Link
+                        if (node.type == "DISCRETE_TYPE")
+                            li.setLikelihoodButton Set likelihood
+                            li.resetLikelihoodButton Reset likelihood
+                            div.likelihoodSetter
+                                ul
+                                each state in node.states
+                                    li
+                                        label=state
+                                            input.likelihoodInput(name='cont_value', min=0, max=100, value='0', type='number')
+
+                                input.likelihoodAccept(type="button" value!="&#x2714;")
+                                input.likelihoodCancel(type="button" value!="&#x2716;")
+
+                        else if (node.type == "CONTINUOUS_TYPE")
+                            li.setValueButton Set value
+                                div.valueSetter
+                                    input.contValueInput(name='cont_value', min=node.states[0], max=node.states[node.states.length-1], value='0', type='number')
+                                    input.contValueAccept(type="button" value!="&#x2714;")
+                                    input.contValueCancel(type="button" value!="&#x2716;")
+                            li.resetValueButton Reset value
+
+        form#blumap_form.run(action='run_inference', method='post', enctype='multipart/form-data')
+            #panel_iterations.panel
+                input(name='iterations', min='1', value='1', type='number')
+                label Number of iterations
+            .inter_processing.panel
+                h4 Intermediate processing
+
+                #pyModuleInputDiv            
+                    input#pyModuleInput.inputfile(name='py_module', type='file')
+                    label(for='pyModuleInput')
+                        span Load python module
+
+                #pyModuleInfoDiv
+                    div#PyModuleName
+                    input#clearPyModuleBtn(type='button', title='Clear python module', value ='Clear python module')
+
+            #panel_configuration.panel
+                h4 Configuration
+                div
+                  button#saveConfig.btn.btn-primary(type='button') Save
+                  input#loadConfig.inputfile(type='file')
+                  label(for='loadConfig')
+                    span Load
+            .panel
+                button#submitForm(type='button') Run
+                #email
+                  input#notifEmail(name='notifEmail', placeholder='Email to send notification', type='email')
+            .panel
+                input#showDetails(type='checkbox')
+                label Show console
+        
+        #popup-container
+            #infoPopup.popup.center-popup
+                span.popup-close &times
+                .content
+        
+        #consoleOutput
+            pre.output
+                

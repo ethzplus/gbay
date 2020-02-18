@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>gBay</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header id="header_index">
+        <a id="getDescription" href="//wiki.gbay.ethz.ch" target="_blank">
+                <div class="info-sign" title="BLUMAP description">i</div>
+            </a>
+<div class="row">
+            <div class="logo"><img id="logo_gbay" src="pics/logo_gbay_neg_small.png"><p>Bayesian Networks with Geo-Data</p></div>
+        </div>
+        <div class="row">
+            <div class="logo"><img id="logo_eth" src="pics/logo_eth.png"><p>Eidgen&ouml;ssische Technische Hochschule Z&uuml;rich</p></div>
+            <div class="logo"><img id="logo_plus" src="pics/logo_plus.png"><p>Planning of Landscape and Urban Systems</p></div>
+        </div>
+        <div class="row">
+            <div class="logo"><img id="logo_ecopotential" src="pics/logo_ecopotential.png"><p>Ecopotential - Improving future ecosystem benefits through earth observations </p></div>
+        <div class="logo"><img id="logo_r4d" src="pics/logo_r4d.png"><p>Swiss Programme for Research on Global Issues for Development</p></div>
+        <div class="logo"><img id="logo_lpplus" src="pics/logo_lpplus.png"><p>Weiterentwicklung Landwirtschaftliche Planung</p></div>
+        </div>
+        <div class="row">
+            <div class="logo last"><img id="logo_eu" src="pics/logo_eu.png">
+            <p>This platform is part of a project that has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 641762</p></div>
+        </div>
+    </header>
+    <form class="info" id="uploadForm" action="get_net_info" method="post" enctype="multipart/form-data">
+        <div class="panel">
+            <div class="inputBN">
+                <input type="file" name="by_network" id="fileBtn" class="inputfile" required="">
+                <label for="fileBtn"><span>Upload bayesian network (.dne)</span></label>
+            </div>
+        </div>
+        <div class="panel">
+                    <button id="netInfo" type="submit" class="proceedBtn">Proceed</button>
+
+        </div>
+    
+    </form>
+    <script src="js/custom-file-input.js"></script>
+</body>
+
+</html>

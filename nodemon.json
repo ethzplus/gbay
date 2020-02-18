@@ -1,0 +1,15 @@
+{
+  "restartable": "rs",
+  "verbose": true,
+  "watch": [
+    "server.js",
+    "config.js",
+    "lib",
+    "routes",
+    "views"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js,json"
+}
