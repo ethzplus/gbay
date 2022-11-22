@@ -22,7 +22,7 @@
     "pug": "~2.0.0-beta6",
     "sanitize-filename": "~1.6.0",
     "serve-favicon": "^2.3.0",
-    "socket.io": "~1.4.6",
+    "socket.io": "~4.5.3",
     "winston": "^2.2.0"
   },
   "devDependencies": {},
